@@ -94,3 +94,6 @@ body {
 .list_item:hover .cursor_img {
     transform: var(--cusror-transform) scale(1);
 }
+.cursor_img:nth-child(6) {
+    background-size: 70%;
+}
