@@ -19,7 +19,7 @@ body {
     font-size: 30px;
 }
 .list {
-    margin-top: 190px;
+    margin-top: 205px;
     font-family: arsenal_f, sans-serif;
     font-size: calc(var(--index) * 2);
     padding: calc(var(--index) * 2.5);
