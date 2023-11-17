@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Bad Script', cursive;
 }
 
 :root {
@@ -10,41 +11,40 @@
     --transition: 1.25s cubic-bezier(.2, .5, 0, 1);
     --transition-cursor: 2s cubic-bezier(.05, .5, 0, 1);
 }
-@font-face {
-    font-family: arsenal_f, sans-serif;
-    src: url(/html/fonts/arsenal-regular.woff2);
-}
 body {
     background-color: #f0f0f0;
 }
+.header {
+    text-align: center;
+    font-size: 30px;
+}
 .list {
+    margin-top: 190px;
     font-family: arsenal_f, sans-serif;
     font-size: calc(var(--index) * 2);
     padding: calc(var(--index) * 2.5);
 }
 .list_item {
-    cursor: none; 
     color: black;
+    cursor: none;
     text-decoration: none;
     display: block;
     line-height: 1;
-    padding: calc(var(--index) * 4 ) calc(var(--index) * 5 );
+    padding: calc(var(--index) * 1 ) calc(var(--index) * 2.5 );
     border-bottom: 1px solid rgb(0 0 0 / .09);
     counter-increment: my-counter;
 }
 .list_item:first-child {
     border-top: solid 1.5px;
 }
-
 .list_header {
-    width: min-content;
+    color: #f0f0f0;
     transition: transform var(--transition);
     will-change: transform;
 }
 .list_item::before {
-    content: counter(my-counter);
-    content: '(0' counter(my-counter) ')';
     position: absolute;
+    content: '(0' counter(my-counter) ')';
     font-size: calc(var(--index) * 0.95);
     margin-left: calc(var(--index) * -2.25 );
     margin-top: calc(var(--index) / 2);
@@ -53,18 +53,22 @@ body {
     transition-delay: .04s;
     will-change: transform;
 }
+.list_header:hover {
+    color: #141414;
+    transition: 1.25s;
+}
 .list_item:hover .list_header,
 .list_item:hover::before {
   transform: translate3d(calc(var(--index) * -2.25), 0, 0); 
 }
 .cursor {
     --width: calc(var(--index)* 22);
-    --height: calc(var(--index)* 14);
+    --height: calc(var(--index)* 17);
     position: fixed;
-    width: var(--width);
+    width: 350px;
     height: 0;
-    top: calc(var(--height) * -.5);
-    left: calc(var(--width) * -.5);
+    top: calc(var(--height) * -.3);
+    left: calc(var(--width) * -.665);
     overflow: hidden;
     transform: translate3d(var(--move-x), var(--move-y), 0);
     transition: transform var(--transition-cursor), height 1s ease;
@@ -77,9 +81,9 @@ body {
     position: relative;
     width: calc(var(--width) * 2);
     height: calc(var(--height) * 2);
-    top: calc(var(--height) * -.4);
-    left: calc(var(--width) * -.25);
-    background-size: cover;
+    top: calc(var(--height) * -.15);
+    left: calc(var(--width) * -.15);
+    background-size: 80%;
     background-position: center;
     transform: var(--cusror-transform) scale(1.5);
     transition: transform var(--transition-cursor);
