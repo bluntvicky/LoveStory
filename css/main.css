@@ -72,7 +72,7 @@ body {
     overflow: hidden;
     transform: translate3d(var(--move-x), var(--move-y), 0);
     transition: transform var(--transition-cursor), height 1s ease;
-    z-index: -1;
+    z-index: 50;
     will-change: transform;
 }
 
